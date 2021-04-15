@@ -22,6 +22,7 @@ public class ServiceUtil {
         }
 
     public String getServiceAddress(){
+
         if(serviceAddress == null){
             serviceAddress = findMyHostName() + "/" + findMyIpAddress() + ":" + port;
         }

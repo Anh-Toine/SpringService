@@ -20,9 +20,14 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	testCompile 'org.junit.jupiter:junit-jupiter:5.5.2'
 	testImplementation 'io.projectreactor:reactor-test'
 }
 
 test {
 	useJUnitPlatform()
+	testLogging {
+		events "passed", "skipped", "failed"
+	}
 }
+
