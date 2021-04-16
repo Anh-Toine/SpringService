@@ -26,7 +26,7 @@ class RecommendationServiceApplicationTests {
 
 	@Test
 	public void getRecommendationsByProductId(){
-		int expectedLength = 3;
+		int expectedLength = 5;
 		client.get()
 				.uri("/recommendation?productId="+PRODUCT_ID_OKAY)
 				.accept(MediaType.APPLICATION_JSON)
