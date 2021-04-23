@@ -8,4 +8,4 @@ logging:
 
 ---
 spring.profiles: docker
-server.port: 8082
+server.port: 8080

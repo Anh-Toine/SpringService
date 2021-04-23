@@ -75,6 +75,8 @@ class ProductServiceApplicationTests {
 				.jsonPath("$.path").isEqualTo("/product/"+PRODUCT_ID_NEGATIVE_VALUE)
 				.jsonPath("$.message").isEqualTo("Invalid productId: "+PRODUCT_ID_NEGATIVE_VALUE);
 	}
+
+
 	@Test
 	void contextLoads() {
 	}
