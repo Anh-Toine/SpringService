@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(int productId) {
-        LOG.debug("createProduct: entity created for productId: {}",productId);
+        LOG.debug("deleteProduct: entity deleted for productId: {}",productId);
         repo.findByProductId(productId).ifPresent(e->repo.delete(e));
     }
 }

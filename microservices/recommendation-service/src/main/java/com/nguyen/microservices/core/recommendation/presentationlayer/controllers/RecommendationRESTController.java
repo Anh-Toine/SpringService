@@ -30,6 +30,7 @@ public class RecommendationRESTController implements RecommendationAPI {
             LOG.debug("No recommendations found for productId: {}", productId);
             return recommendations;
         } else {
+            /*
             recommendations.add(
                     new Recommendation(
                             productId,
@@ -75,6 +76,8 @@ public class RecommendationRESTController implements RecommendationAPI {
                             "Content 5",
                             serviceUtil.getServiceAddress()
                     ));
+
+             */
             LOG.debug("/recommendations found response size: {}", recommendations.size());
             return recommendations;
 
