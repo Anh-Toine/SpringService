@@ -43,12 +43,16 @@ public class RecommendationServiceImpl implements RecommendationService{
 
     @Override
     public Recommendation createRecommendation(Recommendation model) {
-        return null;
+        RecommendationEntity recommendationEntity = mapper.modelToEntity(model);
+        RecommendationEntity newEntity = repo.save(recommendationEntity);
+        LOG.debug("Recommendations createRecommendation: create recommendation entity: {}/{}",model.getProductId(),model.getRecommendationId());
+        return mapper.entityToModel(newEntity);
     }
 
     @Override
     public void deleteRecommendation(int productId) {
-
+        LOG.debug("Recommendations deleteRecommendations: deleting all recommendations for productId: {}",productId);
+        repo.deleteAll(repo.findByProductId(productId));
     }
 
 }
