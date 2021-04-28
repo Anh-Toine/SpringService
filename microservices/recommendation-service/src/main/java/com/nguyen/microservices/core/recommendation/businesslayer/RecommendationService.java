@@ -7,6 +7,6 @@ import java.util.Optional;
 
 public interface RecommendationService {
     List<Recommendation> findByProductId(int productId);
-    //Recommendation createRecommendation(Recommendation model);
-    //void deleteRecommendation(int productId);
+    Recommendation createRecommendation(Recommendation model);
+    void deleteRecommendation(int productId);
 }

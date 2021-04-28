@@ -83,4 +83,15 @@ public class RecommendationRESTController implements RecommendationAPI {
 
         }
     }
+
+    @Override
+    public Recommendation createRecommendation(Recommendation model) {
+
+        return null;
+    }
+
+    @Override
+    public void deleteRecommendations(int productId) {
+
+    }
 }

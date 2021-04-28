@@ -40,26 +40,15 @@ public class RecommendationServiceImpl implements RecommendationService{
         LOG.debug("Recommendations findByProductId: response size: {}",recommendationList.size());
         return recommendationList;
     }
-/*
+
     @Override
     public Recommendation createRecommendation(Recommendation model) {
-
+        return null;
     }
 
     @Override
     public void deleteRecommendation(int productId) {
-        try {
-            List<RecommendationEntity> recommendationEntities = repo.findByProductId(productId);
-            if(recommendationEntities.size() == 0){
-                throw new NotFoundException("No recommendations found for productId: "+ productId);
-            }else{
-                LOG.debug("deleteRecommendation: deleted all recommendations for productId: {}", productId);
-                recommendationEntities.clear();
-            }
-        }catch(NotFoundException e){
-            LOG.debug("An error has occurred: {}",e.getMessage());
-        }
+
     }
 
- */
 }
