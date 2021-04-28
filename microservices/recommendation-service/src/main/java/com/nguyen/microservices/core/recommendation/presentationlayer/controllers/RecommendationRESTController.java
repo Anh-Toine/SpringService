@@ -39,12 +39,13 @@ public class RecommendationRESTController implements RecommendationAPI {
     @Override
     public Recommendation createRecommendation(Recommendation model) {
         Recommendation recommendation = recommendationService.createRecommendation(model);
-        LOG.debug("RecommendationRESTController: created an entity: {} / {}",recommendation.getProductId(),recommendation.getRecommendationId());
+        LOG.debug("RecommendationRESTController createRecommendation: created an entity: {} / {}",recommendation.getProductId(),recommendation.getRecommendationId());
         return recommendation;
     }
 
     @Override
     public void deleteRecommendations(int productId) {
-
+        LOG.debug("RecommendationRESTController deleteRecommendations: trying to delete all recommendations for product with ID: {}",productId);
+        recommendationService.deleteRecommendation(productId);
     }
 }
