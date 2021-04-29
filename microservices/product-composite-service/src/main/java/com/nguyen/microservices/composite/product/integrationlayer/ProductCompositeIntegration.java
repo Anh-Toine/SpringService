@@ -105,6 +105,16 @@ public class ProductCompositeIntegration implements ProductServiceAPI, Recommend
     }
 
     @Override
+    public Recommendation createRecommendation(Recommendation model) {
+        return null;
+    }
+
+    @Override
+    public void deleteRecommendations(int productId) {
+
+    }
+
+    @Override
     public List<Review> getReviews(int productId) {
         try{
             String url = reviewServiceUrl + productId;

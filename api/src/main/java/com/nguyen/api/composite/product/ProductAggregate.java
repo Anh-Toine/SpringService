@@ -7,12 +7,12 @@ import java.util.List;
 
 
 public class ProductAggregate {
-    private int productId;
-    private String name;
-    private int weight;
-    private List<RecommendationSummary> recommendations;
-    private List<ReviewSummary> reviews;
-    private ServiceAddress serviceAddresses;
+    private final int productId;
+    private final String name;
+    private final int weight;
+    private final List<RecommendationSummary> recommendations;
+    private final List<ReviewSummary> reviews;
+    private final ServiceAddress serviceAddresses;
 
     public ProductAggregate(int productId, String name, int weight, List<RecommendationSummary> recommendations, List<ReviewSummary> reviews, ServiceAddress serviceAddresses) {
         this.productId = productId;

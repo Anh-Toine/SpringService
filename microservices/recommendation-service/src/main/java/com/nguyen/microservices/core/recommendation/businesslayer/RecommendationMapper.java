@@ -21,4 +21,7 @@ public interface RecommendationMapper {
             @Mapping(target = "version",ignore = true)
     })
     RecommendationEntity modelToEntity(Recommendation model);
+
+    List<Recommendation> entityListToModelList(List<RecommendationEntity> entities);
+    List<RecommendationEntity> modelListToEntityList(List<Recommendation> models);
 }

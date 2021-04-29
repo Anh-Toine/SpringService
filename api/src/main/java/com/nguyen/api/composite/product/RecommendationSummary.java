@@ -5,9 +5,9 @@ import lombok.Getter;
 
 
 public class RecommendationSummary {
-    private int recommentdationId;
-    private String author;
-    private int rate;
+    private final int recommentdationId;
+    private final String author;
+    private final int rate;
 
     public RecommendationSummary(int recommentdationId, String author, int rate) {
         this.recommentdationId = recommentdationId;

@@ -32,10 +32,7 @@ public class RecommendationServiceImpl implements RecommendationService{
     @Override
     public List<Recommendation> findByProductId(int productId) {
         List<RecommendationEntity> entities = repo.findByProductId(productId);
-        List<Recommendation> recommendationList = new ArrayList<>();
-        for(RecommendationEntity re : entities){
-            recommendationList.add(mapper.entityToModel(re));
-        }
+        List<Recommendation> recommendationList = mapper.entityListToModelList(entities);
         recommendationList.forEach(m -> m.setServiceAddress(serviceUtil.getServiceAddress()));
         LOG.debug("Recommendations findByProductId: response size: {}",recommendationList.size());
         return recommendationList;

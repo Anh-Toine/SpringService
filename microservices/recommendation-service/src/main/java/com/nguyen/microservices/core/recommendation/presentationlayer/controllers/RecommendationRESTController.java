@@ -23,16 +23,12 @@ public class RecommendationRESTController implements RecommendationAPI {
 
     @Override
     public List<Recommendation> getRecommendations(int productId) {
-        List<Recommendation> recommendations = new ArrayList<>();
         if (productId < 1) {
             throw new InvalidInputException("Invalid productId:" + productId);
-        } else if (productId == 113) {
-            LOG.debug("No recommendations found for productId: {}", productId);
-            return recommendations;
-        } else {
+        }else {
+            List<Recommendation> recommendations = recommendationService.findByProductId(productId);
             LOG.debug("/recommendations found response size: {}", recommendations.size());
             return recommendations;
-
         }
     }
 

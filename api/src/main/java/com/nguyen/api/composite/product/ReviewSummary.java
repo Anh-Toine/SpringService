@@ -1,9 +1,9 @@
 package com.nguyen.api.composite.product;
 
 public class ReviewSummary {
-    private int reviewId;
-    private String author;
-    private String subject;
+    private final int reviewId;
+    private final String author;
+    private final String subject;
 
     public ReviewSummary(int reviewId, String author,  String subject) {
         this.reviewId = reviewId;

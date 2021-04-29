@@ -17,7 +17,7 @@ import java.util.stream.Collectors;
 @RestController
 public class ProductCompositeRESTController implements ProductCompositeServiceAPI {
     private final ServiceUtil serviceUtil;
-    private ProductCompositeIntegration integration;
+    private final ProductCompositeIntegration integration;
     public ProductCompositeRESTController(ServiceUtil serviceUtil, ProductCompositeIntegration integration) {
         this.serviceUtil = serviceUtil;
         this.integration = integration;

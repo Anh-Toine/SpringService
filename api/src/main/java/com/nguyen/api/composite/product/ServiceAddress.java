@@ -5,10 +5,10 @@ import lombok.Getter;
 
 
 public class ServiceAddress {
-    private String compositeAddress;
-    private String productAddress;
-    private String reviewAddress;
-    private String recommendationAddress;
+    private final String compositeAddress;
+    private final String productAddress;
+    private final String reviewAddress;
+    private final String recommendationAddress;
 
     public ServiceAddress(String compositeAddress, String productAddress, String reviewAddress, String recommendationAddress) {
         this.compositeAddress = compositeAddress;
