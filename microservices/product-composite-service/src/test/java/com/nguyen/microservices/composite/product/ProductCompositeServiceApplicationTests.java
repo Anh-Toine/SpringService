@@ -29,6 +29,7 @@ import static org.mockito.Mockito.when;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureWebTestClient
 class ProductCompositeServiceApplicationTests {
+
 	private static final int PRODUCT_ID_OKAY = 1;
 	private static final int PRODUCT_ID_NOT_FOUND = 213;
 	private static final int PRODUCT_ID_NEGATIVE_VALUE = -1;
@@ -63,6 +64,7 @@ class ProductCompositeServiceApplicationTests {
 	}
 	@Test
 	public void getProductById(){
+
 		int expectedLength = 1;
 		client.get()
 				.uri("/product-composite/"+PRODUCT_ID_OKAY)

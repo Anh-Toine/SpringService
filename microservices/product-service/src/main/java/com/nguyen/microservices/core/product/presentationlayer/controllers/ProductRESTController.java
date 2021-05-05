@@ -35,4 +35,17 @@ public class ProductRESTController implements ProductServiceAPI {
         */
         return service.getProductById(productId);
     }
+
+    @Override
+    public Product createProduct(Product model) {
+        Product product = service.createProduct(model);
+        LOG.debug("REST createProduct: entity created for productId: {}",product.getProductId());
+        return product;
+    }
+
+    @Override
+    public void deleteProduct(int productId) {
+        LOG.debug("REST deleteProduct: entity deleted for productId: {}",productId);
+        service.deleteProduct(productId);
+    }
 }
