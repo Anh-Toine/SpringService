@@ -8,7 +8,7 @@ public interface ReviewServiceAPI {
     @GetMapping(value="/review",produces = "application/json")
     List<Review> getReviews(@RequestParam(value = "productId", required = true) int productId);
 
-    @PostMapping(value = "/review", produces = "application/json")
+    @PostMapping(value = "/review", consumes = "application/json", produces = "application/json")
     Review createReview(@RequestBody Review review);
 
     @DeleteMapping(value = "/review")

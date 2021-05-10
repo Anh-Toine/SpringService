@@ -17,6 +17,9 @@ public class ServiceAddress {
         this.recommendationAddress = recommendationAddress;
     }
 
+    public ServiceAddress() {
+    }
+
     public String getCompositeAddress() {
         return compositeAddress;
     }

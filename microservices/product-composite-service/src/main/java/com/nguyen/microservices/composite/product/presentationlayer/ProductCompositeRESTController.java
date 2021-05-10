@@ -4,6 +4,7 @@ import com.nguyen.api.composite.product.*;
 import com.nguyen.api.core.product.Product;
 import com.nguyen.api.core.recommendation.Recommendation;
 import com.nguyen.api.core.review.Review;
+import com.nguyen.microservices.composite.product.businesslayer.ProductCompositeService;
 import com.nguyen.microservices.composite.product.businesslayer.ProductCompositeServiceImpl;
 import com.nguyen.microservices.composite.product.integrationlayer.ProductCompositeIntegration;
 import com.nguyen.utils.exceptions.NotFoundException;
@@ -20,10 +21,12 @@ import java.util.stream.Collectors;
 public class ProductCompositeRESTController implements ProductCompositeServiceAPI {
     private final Logger LOG = LoggerFactory.getLogger(ProductCompositeServiceImpl.class);
     private final ServiceUtil serviceUtil;
+    private final ProductCompositeService service;
     private final ProductCompositeIntegration integration;
 
-    public ProductCompositeRESTController(ServiceUtil serviceUtil, ProductCompositeIntegration integration) {
+    public ProductCompositeRESTController(ServiceUtil serviceUtil, ProductCompositeService service, ProductCompositeIntegration integration) {
         this.serviceUtil = serviceUtil;
+        this.service = service;
         this.integration = integration;
     }
 
@@ -38,12 +41,14 @@ public class ProductCompositeRESTController implements ProductCompositeServiceAP
 
     @Override
     public void createCompositeProduct(ProductAggregate productAggregate) {
-
+        LOG.debug("ProductComposite received createCompositeProduct request.");
+        service.createCompositeProduct(productAggregate);
     }
 
     @Override
     public void deleteCompositeProduct(int productId) {
-
+        LOG.debug("ProductComposite received deleteCompositeProduct request.");
+        service.deleteCompositeProduct(productId);
     }
 
     private ProductAggregate createProductAggregate(Product product, List<Recommendation> recommendations, List<Review> reviews, String serviceAddress) {

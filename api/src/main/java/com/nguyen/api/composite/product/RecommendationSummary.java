@@ -1,24 +1,22 @@
 package com.nguyen.api.composite.product;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 
 public class RecommendationSummary {
-    private int recommentdationId;
+    private int recommendationId;
     private String author;
     private int rate;
     private String content;
 
     public RecommendationSummary(int recommentdationId, String author, int rate,String content) {
-        this.recommentdationId = recommentdationId;
+        this.recommendationId = recommentdationId;
         this.author = author;
         this.rate = rate;
         this.content = content;
     }
 
     public RecommendationSummary() {
-        this.recommentdationId = 0;
+        this.recommendationId = 0;
         this.author = "";
         this.rate =  0;
         this.content = "";
@@ -27,11 +25,11 @@ public class RecommendationSummary {
     }
 
     public int getRecommendationId() {
-        return recommentdationId;
+        return recommendationId;
     }
 
-    public void setRecommentdationId(int recommentdationId) {
-        this.recommentdationId = recommentdationId;
+    public void setRecommentdationId(int recommendationId) {
+        this.recommendationId = recommendationId;
     }
 
     public String getAuthor() {
