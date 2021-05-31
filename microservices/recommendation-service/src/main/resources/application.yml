@@ -12,7 +12,6 @@ logging:
     com.nguyen: DEBUG
     org.springframework.data.mongodb.core.MongoTemplate: DEBUG
 
-
 ---
 spring.profiles: docker
 
